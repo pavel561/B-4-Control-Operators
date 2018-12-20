@@ -12,17 +12,101 @@ namespace Basic.Lesson_4._1
         //B4-P1/25. If_TimeOfDayGreeting
         public static void B4_P1_25_If_TimeOfDayGreeting()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P1_25_If_TimeOfDayGreeting");
+			Console.WriteLine("Программа приветствия с учетом времени суток");
+			Console.WriteLine("");
+			//=========================================================
+
+			if (DateTime.Now.TimeOfDay.Hours >= 22 && DateTime.Now.TimeOfDay.Hours < 7)
+			{
+				Console.WriteLine("Доброй ночи! Ольга");
+			}
+			else if (DateTime.Now.TimeOfDay.Hours >=7 && DateTime.Now.TimeOfDay.Hours <10)
+			{
+				Console.WriteLine("Доброе утро! Ольга");
+			}
+			else if (DateTime.Now.TimeOfDay.Hours >= 10 && DateTime.Now.TimeOfDay.Hours < 16)
+			{
+				Console.WriteLine("Добрый день! Ольга");
+			}
+			else if (DateTime.Now.TimeOfDay.Hours >= 16 && DateTime.Now.TimeOfDay.Hours < 22)
+			{
+				Console.WriteLine("Добрый вечер! Ольга");
+			}
+		}
 
         //B4-P2/25. If_NumbersComparing
         public static void B4_P2_25_If_NumbersComparing()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P2_25_If_NumbersComparing");
+			Console.WriteLine("Программа для сравнения двух чисел");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write("Введите число X >> ");
+			int X = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите число Y >> ");
+			int Y = Convert.ToInt32(Console.ReadLine());
+			if(X > Y)
+			{
+				Console.Write($"Число X больше числа Y на {X - Y} ");
+			}
+			else if(X < Y)
+			{
+				Console.Write($"Число X меньше числа Y на {Y - X} ");
+			}
+			else
+			{
+				Console.Write($"Число X равно числу Y ");
+			}
+		}
 
         //B4-P3/25. If_PositiveNumbersComparing
         public static void B4_P3_25_If_PositiveNumbersComparing()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P3_25_If_PositiveNumbersComparing");
+			Console.WriteLine("Программа для сравнения двух чисел");
+			Console.WriteLine("больших или равных нулю");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write("Введите число X >> ");
+			int X = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите число Y >> ");
+			int Y = Convert.ToInt32(Console.ReadLine());
+			if(X>=0)
+			{
+				if(Y>=0)
+				{
+					if (X > Y)
+					{
+						Console.Write($"Число X больше числа Y на {X - Y} ");
+					}
+					else if (X < Y)
+					{
+						Console.Write($"Число X меньше числа Y на {Y - X} ");
+					}
+					else
+					{
+						Console.Write($"Число X равно числу Y ");
+					}
+				}
+			}
+			if(X<0 || Y<0)
+			{
+				Console.WriteLine($"Веедено отрицательное число!");
+				Console.WriteLine($"Сравнение чисел не производится.");
+			}
+
+			
+		}
 
         //B4-P4/25. If_Akinator5Numbers
         public static void B4_P4_25_If_Akinator5Numbers()
@@ -33,12 +117,81 @@ namespace Basic.Lesson_4._1
         //B4-P5/25. Switch_DayOfWeek
         public static void B4_P5_25_Switch_DayOfWeek()
         {
+			var today = DateTime.Today;
+			var dayOfWeek = (int)today.DayOfWeek;
+			switch(dayOfWeek)
+			{
+				case (0):
+					{
+						Console.WriteLine("Доброго воскресенья, Ольга");
+						break;
+					}
+				case (1):
+					{
+						Console.WriteLine("Доброго понедельника, Ольга");
+						break;
+					}
+				case (2):
+					{
+						Console.WriteLine("Доброго вторника, Ольга");
+						break;
+					}
+				case (3):
+					{
+						Console.WriteLine("Доброй среды, Ольга");
+						break;
+					}
+				case (4):
+					{
+						Console.WriteLine("Доброго четверга, Ольга");
+						break;
+					}
+				case (5):
+					{
+						Console.WriteLine("Доброй пятницы, Ольга");
+						break;
+					}
+				case (6):
+					{
+						Console.WriteLine("Доброй, Субботы");
+						break;
+					}
+
+			}
         }
 
         //B4-P6/25. Switch_GameNavigation
         public static void B4_P6_25_Switch_GameNavigation()
         {
-            
+			
+			var pressedKey =Console.ReadKey(true).KeyChar;
+			switch (pressedKey)
+			{
+				case 'W':
+				case 'w':
+					{
+						Console.WriteLine("Вверх");
+						break;
+					}
+				case 'A':
+				case 'a':
+					{
+						Console.WriteLine("Влево");
+						break;
+					}
+				case 'S':
+				case 's':
+					{
+						Console.WriteLine("Вниз");
+						break;
+					}
+				case 'D':
+				case 'd':
+					{
+						Console.WriteLine("Вправо");
+						break;
+					}
+			}
         }
 
         //B4-P7/25. For_10OddEven
