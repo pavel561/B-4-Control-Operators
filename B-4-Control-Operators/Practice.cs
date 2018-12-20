@@ -111,12 +111,68 @@ namespace Basic.Lesson_4._1
         //B4-P4/25. If_Akinator5Numbers
         public static void B4_P4_25_If_Akinator5Numbers()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P4_25_If_Akinator5Numbers");
+			Console.WriteLine("Программа угадывающая число");
+			Console.WriteLine("от 1го до 5ти");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write($"Число больше 3х? (Y/N) >>");
+			if(Console.ReadKey(false).Key == ConsoleKey.Y)
+			{
+				Console.WriteLine("");
+				Console.Write($"Число меньше 5-и? (Y/N) >>");
+				if (Console.ReadKey(false).Key == ConsoleKey.Y)
+				{
+					Console.WriteLine("");
+					Console.WriteLine($"Число равно 4-ём !!!");
+				}
+				else
+				{
+					Console.WriteLine("");
+					Console.WriteLine($"Число равно 5-и !!!");
+				}
+			}
+			else
+			{
+				Console.WriteLine("");
+				Console.Write($"Число меньше 3х? (Y/N) >>");
+				if (Console.ReadKey(false).Key == ConsoleKey.Y)
+				{
+					Console.WriteLine("");
+					Console.Write($"Число больше 1-го? >>");
+					if(Console.ReadKey(false).Key == ConsoleKey.Y)
+					{
+						Console.WriteLine("");
+						Console.WriteLine($"Число равно 2-м !!!");
+					}
+					else
+					{
+						Console.WriteLine("");
+						Console.WriteLine($"Число равно 1-му !!!");
+					}
+				}
+				else
+				{
+					Console.WriteLine("");
+					Console.WriteLine($"Число равно 3-ем !!!");
+				}
+			}
+			Console.ReadKey();
+		}
 
         //B4-P5/25. Switch_DayOfWeek
         public static void B4_P5_25_Switch_DayOfWeek()
         {
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P5_25_Switch_DayOfWeek");
+			Console.WriteLine("Программа приветствия с учетом дня недели");
+			Console.WriteLine("");
+			//=========================================================
 			var today = DateTime.Today;
 			var dayOfWeek = (int)today.DayOfWeek;
 			switch(dayOfWeek)
@@ -163,41 +219,83 @@ namespace Basic.Lesson_4._1
         //B4-P6/25. Switch_GameNavigation
         public static void B4_P6_25_Switch_GameNavigation()
         {
-			
-			var pressedKey =Console.ReadKey(true).KeyChar;
-			switch (pressedKey)
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P6_25_Switch_GameNavigation");
+			Console.WriteLine("Программа перемещения в игре");
+			Console.WriteLine("");
+			Console.WriteLine("W - Вверх");
+			Console.WriteLine("S - Вниз");
+			Console.WriteLine("A - Влево");
+			Console.WriteLine("D - Вправо");
+			Console.WriteLine("Q - Выход");
+			Console.WriteLine("");
+			//=========================================================
+			bool run = true;
+			while (run)
 			{
-				case 'W':
-				case 'w':
-					{
-						Console.WriteLine("Вверх");
-						break;
-					}
-				case 'A':
-				case 'a':
-					{
-						Console.WriteLine("Влево");
-						break;
-					}
-				case 'S':
-				case 's':
-					{
-						Console.WriteLine("Вниз");
-						break;
-					}
-				case 'D':
-				case 'd':
-					{
-						Console.WriteLine("Вправо");
-						break;
-					}
+				var pressedKey = Console.ReadKey(true).Key;
+				switch (pressedKey)
+				{
+					case ConsoleKey.W:
+						{
+							Console.WriteLine("Вверх");
+							break;
+						}
+					case ConsoleKey.A:
+						{
+							Console.WriteLine("Влево");
+							break;
+						}
+					case ConsoleKey.S:
+						{
+							Console.WriteLine("Вниз");
+							break;
+						}
+					case ConsoleKey.D:
+						{
+							Console.WriteLine("Вправо");
+							break;
+						}
+					case ConsoleKey.Q:
+						{
+							run = false;
+							Console.WriteLine("Выход из игры.");
+							break;
+						}
+					default:
+						{
+							Console.WriteLine("Неверный ввод.");
+							break;
+						}
+				}
 			}
-        }
+			Console.ReadKey();
+		}
 
         //B4-P7/25. For_10OddEven
         public static void B4_P7_25_For_10OddEven()
         {
-            
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P7_25_For_10OddEven");
+			Console.WriteLine("Программа вывода чисел и проверки на четность");
+			Console.WriteLine("");
+			//=========================================================
+			for (int i=1; i<=10; i++)
+			{
+				Console.Write($"{i} ");
+				if(i%2 == 0)
+				{
+					Console.Write("- Четное");
+				}
+				else
+				{
+					Console.Write("- Нечетное");
+				}
+			}
         }
 
 
