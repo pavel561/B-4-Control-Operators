@@ -289,25 +289,91 @@ namespace Basic.Lesson_4._1
 				Console.Write($"{i} ");
 				if(i%2 == 0)
 				{
-					Console.Write("- Четное");
+					Console.WriteLine("- Четное");
 				}
 				else
 				{
-					Console.Write("- Нечетное");
+					Console.WriteLine("- Нечетное");
 				}
 			}
-        }
+			Console.ReadKey();
+		}
 
 
         //B4-P8/25. For_3DevideNumbers
         public static void B4_P8_25_For_3DevideNumbers()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P8_25_For_3DevideNumbers");
+			Console.WriteLine("Программа вывода чисел делящихся на 3");
+			Console.WriteLine("без остатка, в интервале от 0 до 30");
+			Console.WriteLine("");
+			//=========================================================
+			for (int i = 30; i >= 0; i--)
+			{
+				
+				if (i % 3 == 0)
+				{
+					Console.Write($"{i} ");				// Вывод в одну строку
+					//Console.WriteLine($"{i} ");		// Вывод каждого числа в отдельную строку
+				}
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P9/25. For_Matrix10x10
         public static void B4_P9_25_For_Matrix10x10()
         {
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P9_25_For_Matrix10x10");
+			Console.WriteLine("Программа вывода матрицы 10x10");
+			Console.WriteLine("Матрица заполнена случайными числами");
+			Console.WriteLine("в интервале от 0 до 100");
+			Console.WriteLine("");
+			//=========================================================
+
+			const int MAX_VALUE = 100;
+			const int MIN_VALUE = 0;
+			Random randomNumber = new Random();
+			int[,] matrix = new int[10, 10];
+			for (int y = 0; y < 10; y++)
+			{
+				for (int x = 0; x < 10; x++)
+				{
+					matrix[x,y] = (int)randomNumber.Next(MIN_VALUE, MAX_VALUE);
+				}
+			}
+
+			for (int y = 0; y<10; y++)
+			{
+				for(int x=0; x<10; x++)
+				{
+					//Выравниваем столбцы, в зависимости от количества цифр числа 
+					Console.Write($"{matrix[x, y]}");
+					if(matrix[x, y] < 100)
+					{
+						if (matrix[x, y] < 10)
+						{
+							Console.Write("   ");
+						}
+						else
+						{
+							Console.Write("  ");
+						}
+					}
+					else 
+					{
+						Console.Write(" ");
+					}
+				}
+				Console.WriteLine($"");
+				Console.WriteLine($"");
+			}
            
         }
 
@@ -315,81 +381,483 @@ namespace Basic.Lesson_4._1
         //B4-P10/25. For_HelloWorld
         public static void B4_P10_25_For_HelloWorld()
         {
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P10_25_For_HelloWorld");
+			Console.WriteLine("Программа выводит сообщение");
+			Console.WriteLine("\"Привет, мир\" 6 раз");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			for (int i = 0; i<6; i++)
+			{
+				Console.WriteLine($"Привет, мир!");
+			}
         }
 
 
         //B4_P11/25. For_Afrochildren
         public static void B4_P11_25_For_Afrochildren()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P11_25_For_Afrochildren");
+			Console.WriteLine("Программа выводит считалку");
+			Console.WriteLine("про 10 негритят");
+			Console.WriteLine("Используется цикл for");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			for (int i = 10; i >= 0; i--)
+			{
+				if (i == 10)
+				{
+					Console.WriteLine($" Однажды {i} негритят уселись пообедать.");
+					Console.WriteLine($" Один из них закашлялся -и их осталось {i-1}.");
+					continue;
+				}
+				if (i == 9)
+				{
+					Console.WriteLine($" Однажды {i} негритят уснули очень поздно.");
+					Console.WriteLine($" Один их них так и не встал - и их осталось {i - 1}.");
+					continue;
+				}
+				if (i == 8)
+				{
+					Console.WriteLine($" Потом {i}-ка негритят по Девону бродила.");
+					Console.WriteLine($" Один остался там совсем - и их теперь уж {i - 1}.");
+					continue;
+				}
+				if (i == 7)
+				{
+					Console.WriteLine($" Все {i} веселых негритят по тросточке купили.");
+					Console.WriteLine($" Один взмахнул - неловкий жест - и вот их стало {i - 1}.");
+					continue;
+				}
+				if (i == 6)
+				{
+					Console.WriteLine($" Теперь {i}-ка негритят на пасеку взабралась.");
+					Console.WriteLine($" Но одного ужалил шмель - и {i - 1}-ро осталось.");
+					continue;
+				}
+				if (i == 5)
+				{
+					Console.WriteLine($" {i} самых строгих негритят суровый суд вершили.");
+					Console.WriteLine($" Приговорили одного - и стало их {i - 1}.");
+					continue;
+				}
+				if (i == 4)
+				{
+					Console.WriteLine($" И вот {i}-ка негритят пошла плескаться в море.");
+					Console.WriteLine($" Попался на крючек один - и их осталось {i - 1}-ое.");
+					continue;
+				}
+				if (i == 3)
+				{
+					Console.WriteLine($" Явилось {i}-е в зоопарк, медведь гулял на воле.");
+					Console.WriteLine($" Прихлопнул лапой одного - их осталось {i - 1}-ое.");
+					continue;
+				}
+				if (i == 2)
+				{
+					Console.WriteLine($" {i} негрятенка в след за тем на солнышке лежали.");
+					Console.WriteLine($" Внезапно выстрел прогремел - и {i - 1}-го не стало.");
+					continue;
+				}
+				if (i == 1)
+				{
+					Console.WriteLine($" И вот {i}, совсем {i}. Тоскою сердце сжало.");
+					Console.WriteLine($" Пошел повесился и он. И никого не стало.");
+					continue;
+				}
+				if (i == 0)
+				{
+					Console.WriteLine($" Конец");
+					continue;
+				}
+			}
+		}
 
 
         //B4-P12/25. For_Minus10OddEven
         public static void B4_P12_25_For_Minus10OddEven()
         {
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P12_25_For_Minus10OddEven");
+			Console.WriteLine("Программа проверяет на четность");
+			Console.WriteLine("числа в интервале от 0 до -10");
+			Console.WriteLine("Используется цикл for");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			for (int i=0; i>=-10; i--)
+			{
+				Console.Write($" {i} ");
+				if (i % 2 == 0)
+				{
+					Console.WriteLine("- Четное");
+				}
+				else
+				{
+					Console.WriteLine("- Нечетное");
+				}
+			}
         }
 
 
         //B4-P13/25 For_LettersCount
         public static void B4_P13_25_For_LettersCount()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P13_25_For_LettersCount");
+			Console.WriteLine("Программа определяет количество букв \"а\"");
+			Console.WriteLine("и выводит его на экран");
+			Console.WriteLine("Используется цикл for");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write("Веедите слово >> ");
+			string message = Console.ReadLine();
+			const char letter = 'а';				//Символ кириллицы
+			int counter = 0;
+			string ending;
+			for(int i = 0; i < message.Length; i++)
+			{
+				if(message[i]==letter)
+				{
+					counter++;
+				}
+			}
+
+			if(counter!=0)
+			{
+				if (counter == 1) ending = "ва";							//Проверка счетчика для изменения окончания в слове "буква"
+				else if (counter > 1 && counter < 5) ending = "вы";
+				else ending = "в";
+				Console.WriteLine($"В слове содержится {counter} бук{ending} \"{letter}\"");
+			}
+			else
+			{
+				Console.WriteLine($"Слове не содержит буквы \"{letter}\"");
+			}
+
+		}
 
 
-        //B4-P14/25 *For_AlphabetBack
-        public static void B4_P14_25_For_AlphabetBack()
+		//B4-P14/25 *For_AlphabetBack
+		public static void B4_P14_25_For_AlphabetBack()
         {
-            
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P14_25_For_AlphabetBack");
+			Console.WriteLine("Программа выводит латинский алфавит ");
+			Console.WriteLine("в обратном порядке");
+			Console.WriteLine("Используется цикл for");
+			Console.WriteLine("Используется верхний регистр символов");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			for (char letter = 'Z'; letter>='A'; letter--)
+			{
+				Console.Write($"{letter}");
+			}
         }
 
 
         //B4-P15/25 While_OddEventNumber
         public static void B4_P15_25_While_OddEventNumber()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P15_25_While_OddEventNumber");
+			Console.WriteLine("Программа выводит четные числа ");
+			Console.WriteLine("из выбранного интервала от 1 до N");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write($"Введите максимальное число проверяемого ряда >> ");
+			int numbersAmount = Convert.ToInt32(Console.ReadLine());
+			if(numbersAmount >=0 )
+			{
+				int i = 1;
+				while (i <= numbersAmount)
+				{
+					if (i % 2 == 0)
+					{
+						Console.Write($"{i} ");             // Вывод в одну строку
+						//Console.WriteLine($"{i} ");		// Вывод каждого числа в отдельную строку
+					}
+					i++;
+				}
+			}
+			else
+			{
+				Console.WriteLine($"Неверный ввод");             // Вывод ошибки													
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P16/25 DoWhile_OddEventNumber
         public static void B4_P16_25_DoWhile_OddEventNumber()
         {
-           
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P16_25_DoWhile_OddEventNumber");
+			Console.WriteLine("Программа выводит нечетные числа ");
+			Console.WriteLine("из выбранного интервала от 1 до N");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write($"Введите максимальное число проверяемого ряда >> ");
+			int numbersAmount = Convert.ToInt32(Console.ReadLine());
+			if (numbersAmount >= 0)
+			{
+				int i = 1;
+				while (i <= numbersAmount)
+				{
+					if (i % 2 != 0)
+					{
+						Console.Write($"{i} ");             // Вывод в одну строку
+						//Console.WriteLine($"{i} ");		// Вывод каждого числа в отдельную строку
+					}
+					i++;
+				}
+			}
+			else
+			{
+				Console.WriteLine($"Неверный ввод");             // Вывод ошибки													
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P17/25 While_HelloWorld
         public static void B4_P17_25_While_HelloWorld()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P17_25_While_HelloWorld");
+			Console.WriteLine("Программа выводит сообщение");
+			Console.WriteLine("\"Привет, мир\" 6 раз");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			int i = 0;
+			while(i < 6)
+			{
+				Console.WriteLine("Привет, мир!");
+				i++;
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P18/25 While_Multiplier
         public static void B4_P18_25_While_Multiplier()
-        {
-            
-        }
+		{
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P18_25_While_Multiplier");
+			Console.WriteLine("Программа возводит введенное число в степень");
+			Console.WriteLine("и выводит результат");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			Console.Write("Введите число, которое требуется возвести в степень >> ");
+			int number = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите степень, в которую требуется возвести число >> ");
+			int exponent = Convert.ToInt32(Console.ReadLine());
+			if(exponent>=0)
+			{
+				int result = 1;
+				while (exponent > 0)
+				{
+					result *= number;
+					exponent--;
+				}
+				Console.WriteLine($"Результат - {result}");
+			}
+			else
+			{
+				Console.WriteLine($"Извините, Программа пока еще не умеет возводит число в отрицательную степень =((");
+			}
+			Console.ReadKey();
+		}
 
 
-        //B4-P19/25 While_SolveNumberAdding
-        public static void B4_P19_25_While_SolveNumberAdding()
+		//B4-P19/25 While_SolveNumberAdding
+		public static void B4_P19_25_While_SolveNumberAdding()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P19_25_While_SolveNumberAdding");
+			Console.WriteLine("Программа проверяет ответ пользователя");
+			Console.WriteLine("до тех пор, пока не будет дан");
+			Console.WriteLine("правильный ответ.");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			bool answer = false;
+			Console.Write("Введите результат вычисления выражения 2+2 >> ");
+			int result;
+			while (!answer)
+			{
+				result = Convert.ToInt32(Console.ReadLine());
+				if (result == 4)
+				{
+					Console.WriteLine($"Правильно !!");
+					break;
+				}
+				else
+				{
+					Console.Write($"Неправильно !! Попробуйте еще раз >> ");
+				}
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P20/25 While_DiceGame
         public static void B4_P20_25_While_DiceGame()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P20_25_While_DiceGame");
+			Console.WriteLine("Программа, реализующая алгоритм игры");
+			Console.WriteLine("с фишками и костями.");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			const int GAME_STEP_AMOUNT = 25;			//Размер игрового поля
+			int currentUserPosition = 0;                //Текущая позиция игрока
+			int userMovesCount = 0;						//Счетчик ходов игрока
+			bool gameOver = false;						//Флаг окончания игры
 
+			while(!gameOver)
+			{
+				Console.Write("Введите выпавшее на кости число (от 1 до 6) >> ");
+				int boneDroppedNumber = Convert.ToInt32(Console.ReadLine());
+				if(boneDroppedNumber > 6 || boneDroppedNumber < 1)
+				{
+					Console.WriteLine("Неверный ввод !!!");
+					continue;
+				}
+				currentUserPosition += boneDroppedNumber;
+				userMovesCount++;
+				if(currentUserPosition < GAME_STEP_AMOUNT)
+				{
 
-        //B4-P21/25 *While_DiceGameMultiplePlayers
-        public static void dB4_P21_25_While_DiceGameMultiplePlayers()
+				}
+				else
+				{
+					gameOver = true;
+					Console.Write($"Вы выиграли !!! Количество ходов - {userMovesCount}.");
+				}
+			}
+			Console.ReadKey();
+		}
+
+		//B4-P21/25 *While_DiceGameMultiplePlayers
+		public static void dB4_P21_25_While_DiceGameMultiplePlayers()
         {
-        }
+			const bool USER_1 = true;
+			const bool USER_2 = false;
+			const int GAME_STEP_AMOUNT = 25;            //Размер игрового поля
+			int currentUser1Position = 0;               //Текущая позиция игрока 1
+			int currentUser2Position = 0;               //Текущая позиция игрока 2
+			int user1MovesCount = 0;                    //Счетчик ходов игрока 1 
+			int user2MovesCount = 0;                    //Счетчик ходов игрока 2
+			bool gameOver = false;                      //Флаг окончания игры
+			bool userSelect = USER_1;
+
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P20_25_While_DiceGame");
+			Console.WriteLine("Программа, реализующая алгоритм игры");
+			Console.WriteLine("с фишками и костями.");
+			Console.WriteLine("Реализовано взаимодействие 2х игорков.");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+			Console.WriteLine("Для начала игры нажмите любую клавишу...");
+			Console.ReadKey();
+
+			while (!gameOver)
+			{
+				Console.Clear();
+				Console.WriteLine($"Позиция игрока 1 - {currentUser1Position}.");
+				Console.WriteLine($"Позиция игрока 2 - {currentUser2Position}.");
+				if(userSelect)
+				{
+					Console.WriteLine($"Ход игрока 1.");
+				}
+				else
+				{
+					Console.WriteLine($"Ход игрока 2.");
+				}
+				Console.Write("Введите выпавшее на кости число (от 1 до 6) >> ");
+				int boneDroppedNumber = Convert.ToInt32(Console.ReadLine());
+				if (boneDroppedNumber > 6 || boneDroppedNumber < 1)
+				{
+					Console.WriteLine("Неверный ввод !!!");
+					continue;
+				}
+				if(userSelect)
+				{
+					userSelect = USER_2;
+					currentUser1Position += boneDroppedNumber;
+					user1MovesCount++;
+					if (currentUser1Position < GAME_STEP_AMOUNT)
+					{
+
+					}
+					else
+					{
+						gameOver = true;
+						Console.Write($"Игрок 1 выиграл !!! Количество ходов - {user1MovesCount}.");
+					}
+				}
+				else
+				{
+					userSelect = USER_1;
+					currentUser2Position += boneDroppedNumber;
+					user2MovesCount++;
+					if (currentUser2Position < GAME_STEP_AMOUNT)
+					{
+
+					}
+					else
+					{
+						gameOver = true;
+						Console.Write($"Игрок 2 выиграл !!! Количество ходов - {user2MovesCount}.");
+					}
+				}
+				
+				
+			}
+		}
 
 
         //B4-P22_25 *While_Akinator100Numbers
@@ -402,8 +870,69 @@ namespace Basic.Lesson_4._1
         //B4-P23/25 IfElse_Calcultor
         public static void B4_P23_25_IfElse_Calcultor()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P23_25_IfElse_Calcultor");
+			Console.WriteLine("Программа - Калькулятор");
+			Console.WriteLine("Используется конструкция if/else");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+
+			decimal number1;
+			decimal number2;
+			char calcSign;
+			decimal result;
+			Console.Write("Введите первое число >> ");
+			number1 = Convert.ToDecimal(Console.ReadLine());
+			
+			while (true)
+			{
+				Console.Write("Введите знак операции >> ");
+				calcSign = Console.ReadKey().KeyChar;
+				Console.WriteLine("");
+				if (calcSign=='+' || calcSign == '-' || calcSign == '*' || calcSign == '/')
+				{
+					break;
+				}
+				else
+				{
+					Console.WriteLine("Ошибочный ввод !");
+					Console.WriteLine("Допустимы символы '+','-','*','/' ");
+				}
+			}
+			
+			Console.Write("Введите второе число >> ");
+			number2 = Convert.ToDecimal(Console.ReadLine());
+
+			if (calcSign == '+')
+			{
+				result = number1 + number2;
+				Console.WriteLine($" {number1} + {number2} = {result}");
+			}
+			else if(calcSign == '-')
+			{
+				result = number1 - number2;
+				Console.WriteLine($" {number1} - {number2} = {result}");
+			}
+			else if(calcSign == '*')
+			{
+				result = number1 * number2;
+				Console.WriteLine($" {number1} * {number2} = {result}");
+			}
+			else if(calcSign == '/')
+			{
+				result = number1 / number2;
+				Console.WriteLine($" {number1} / {number2} = {result}");
+			}
+			else
+			{
+				Console.WriteLine($"Неверный ввод !!!");
+			}
+			Console.ReadKey();
+
+		}
 
 
         //B4-P24_25 Switch_Calculator
