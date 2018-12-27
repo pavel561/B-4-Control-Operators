@@ -863,10 +863,110 @@ namespace Basic.Lesson_4._1
         //B4-P22_25 *While_Akinator100Numbers
         public static void B4_P22_25_While_Akinator100Numbers()
         {
-            
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine("B4_P22_25_While_Akinator100Numbers");
+			Console.WriteLine("Программа угадывает введенное число");
+			Console.WriteLine("от 1 до 100");
+			Console.WriteLine("Используется цикл while");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+
+			const int MAX_VALUE = 100;
+			const int MIN_VALUE = 1;
+			int currentMinValue = MIN_VALUE;
+			int currentMaxValue = MAX_VALUE;
+			bool answer = false;
+            while(true)
+			{
+				if ((currentMaxValue - currentMinValue) > 3)
+				{
+					Console.Write($"Число больше {currentMinValue + (currentMaxValue - currentMinValue) / 2} ? >> ");
+					ConsoleKey key = Console.ReadKey(true).Key;
+					if (key == ConsoleKey.Y || key == ConsoleKey.N)
+					{
+						if (key == ConsoleKey.Y)
+						{
+
+							Console.WriteLine("Yes");
+							currentMinValue += ((currentMaxValue - currentMinValue) / 2) + 1;
+						}
+						else
+						{
+							Console.WriteLine("No");
+							currentMaxValue -= ((currentMaxValue - currentMinValue) / 2) ;
+						}
+					}
+					else
+					{
+						Console.WriteLine("Ошибочный ввод !! Допуск.симв. Y/N/y/n");
+						continue;
+					}
+				}
+				else
+				{
+					Console.Write($"Число больше {currentMinValue} ? >> ");
+					ConsoleKey key = Console.ReadKey().Key;
+					if (key == ConsoleKey.Y || key == ConsoleKey.N)
+					{
+						if (key == ConsoleKey.Y )
+						{
+							Console.WriteLine("Yes");
+							if ((currentMaxValue - currentMinValue) > 1)
+							{
+								currentMinValue++;
+							}
+							else
+							{
+								Console.WriteLine($"Загаданное число равно {currentMaxValue} ");
+								break;
+							}
+						}
+						else
+						{
+							Console.WriteLine("No");
+							Console.WriteLine($"Загаданное число равно {currentMinValue} ");
+							break;
+						}
+					}
+					else
+					{
+						Console.WriteLine("Ошибочный ввод !! Допуск.симв. Y/N/y/n");
+						continue;
+					}
+				}
+			}
         }
+		/*
+		 * 
+		 * if((currentMaxValue-currentMinValue)==2)
+				{
+					Console.Write($"Число больше {currentMinValue} ? >> ");
+					key = Console.ReadKey().Key;
+					Console.WriteLine("");
+					if (key == ConsoleKey.Y || key == ConsoleKey.N)
+					{
+						if (key == ConsoleKey.Y)
+						{
+							//currentMinValue += (currentMaxValue - currentMinValue) / 2;
+						}
+						else
+						{
+							//currentMaxValue -= (currentMaxValue - currentMinValue) / 2;
+						}
+					}
+					else
+					{
+						Console.WriteLine("Ошибочный ввод !! Допуск.симв. Y/N/y/n");
+						continue;
+					}
 
-
+					Console.WriteLine($"Загаданное число равно {currentMinValue + 1} ");
+					break;
+				}
+				*/
         //B4-P23/25 IfElse_Calcultor
         public static void B4_P23_25_IfElse_Calcultor()
         {
@@ -1012,6 +1112,43 @@ namespace Basic.Lesson_4._1
         //B4-P25/25 Cycle_WordRevercse
         public static void B4_P25_25_Cycle_WordRevercse()
         {
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine(" B4_P25_25_Cycle_WordRevercse");
+			Console.WriteLine("Программа переставляет символы в слове");
+			Console.WriteLine("в обратном порядке");
+			Console.WriteLine("Реализовано с помощью метода Array.Reverse");
+			Console.WriteLine("а также через цикл for");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+
+			string word;
+			char[] wordCharArray;
+			char[] resultCharArray;
+			string result;
+			Console.Write("Введите слово >> ");
+			word = Console.ReadLine();				//Считываем введенную строку
+			Console.WriteLine("");
+
+			wordCharArray = word.ToCharArray();		//Преобразуем строку в массив символов
+
+			Array.Reverse(wordCharArray, 0, word.Length);	//Переставляем символы в массиве, используя метод Reverse класса Array
+
+			result = new string(wordCharArray);				//Записываем результат перестановки в строковую переменную
+
+			Console.WriteLine($"Результат, с использованием Array.Reverse >> {result}");	//Выводим результат на экран
+			//перестановка символов через цикл for
+			wordCharArray = word.ToCharArray();				//Преобразуем строку в массив символов
+			resultCharArray = new char[wordCharArray.Length];
+			//Переставляем символы в массиве, используя цикл
+			for (int i = wordCharArray.Length-1; i>=0; i--)
+			{
+				resultCharArray[wordCharArray.Length -1- i] = wordCharArray[i];
+			}
+
+			Console.WriteLine($"Результат, с использованием цикла for >> {new string(resultCharArray)}");  //Выводим результат на экран
+		}
     }
 }
