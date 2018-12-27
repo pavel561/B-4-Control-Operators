@@ -80,7 +80,8 @@ namespace Basic.Lesson_4._1
 			//Practice.B4_P20_25_While_DiceGame();
 			//Practice.dB4_P21_25_While_DiceGameMultiplePlayers();
 
-			Practice.B4_P23_25_IfElse_Calcultor();
+			//Practice.B4_P23_25_IfElse_Calcultor();
+			Practice.B4_P24_25_Switch_Calculator();
 			Console.ReadLine();
 
 		}

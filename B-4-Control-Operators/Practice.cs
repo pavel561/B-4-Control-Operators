@@ -931,15 +931,82 @@ namespace Basic.Lesson_4._1
 				Console.WriteLine($"Неверный ввод !!!");
 			}
 			Console.ReadKey();
-
 		}
 
 
         //B4-P24_25 Switch_Calculator
         public static void B4_P24_25_Switch_Calculator()
         {
-            
-        }
+			//=========================================================
+			Console.WriteLine("");
+			Console.WriteLine("====================================");
+			Console.WriteLine(" B4_P24_25_Switch_Calculator");
+			Console.WriteLine("Программа - Калькулятор");
+			Console.WriteLine("Используется конструкция switch/case");
+			Console.WriteLine("====================================");
+			Console.WriteLine("");
+			//=========================================================
+
+			decimal number1;
+			decimal number2;
+			char calcSign;
+			decimal result;
+			Console.Write("Введите первое число >> ");
+			number1 = Convert.ToDecimal(Console.ReadLine());
+
+			while (true)
+			{
+				Console.Write("Введите знак операции >> ");
+				calcSign = Console.ReadKey().KeyChar;
+				Console.WriteLine("");
+				if (calcSign == '+' || calcSign == '-' || calcSign == '*' || calcSign == '/')
+				{
+					break;
+				}
+				else
+				{
+					Console.WriteLine("Ошибочный ввод !");
+					Console.WriteLine("Допустимы символы '+','-','*','/' ");
+				}
+			}
+
+			Console.Write("Введите второе число >> ");
+			number2 = Convert.ToDecimal(Console.ReadLine());
+
+			switch(calcSign)
+			{
+				case '+':
+					{
+						result = number1 + number2;
+						Console.WriteLine($" {number1} + {number2} = {result}");
+						break;
+					}
+				case '-':
+					{
+						result = number1 - number2;
+						Console.WriteLine($" {number1} - {number2} = {result}");
+						break;
+					}
+				case '*':
+					{
+						result = number1 * number2;
+						Console.WriteLine($" {number1} * {number2} = {result}");
+						break;
+					}
+				case '/':
+					{
+						result = number1 / number2;
+						Console.WriteLine($" {number1} / {number2} = {result}");
+						break;
+					}
+				default:
+					{
+						Console.WriteLine($"Неверный ввод !!!");
+						break;
+					}
+			}
+			Console.ReadKey();
+		}
 
 
         //B4-P25/25 Cycle_WordRevercse
